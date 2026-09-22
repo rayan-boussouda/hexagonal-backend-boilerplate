@@ -1,0 +1,13 @@
+if ! npx --no -- commitlint --edit "$1"; then
+  echo ""
+  echo "Commit message must follow Conventional Commits:"
+  echo "  <type>(<optional scope>): <description>"
+  echo ""
+  echo "Allowed types: build, chore, ci, docs, feat, fix, perf, refactor, revert, style, test"
+  echo ""
+  echo "Examples:"
+  echo "  feat: add product seeding"
+  echo "  fix: correct decimal price mapping"
+  echo "  chore: configure husky and commitlint"
+  exit 1
+fi
